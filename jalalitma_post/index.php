@@ -29,12 +29,29 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
+function date_tma_daywtitel() {
+
+    require_once('inc/jdftma.php');
+    date_default_timezone_set("Iran");
+//echo date("h:i:s");
+
+    return  (  get_the_title() .' '. jdatetma(' Y F j') );
+}
+
 function date_tma_dayw() {
 
     require_once('inc/jdftma.php');
-    echo jdate_tma('Y F j');
+    date_default_timezone_set("Iran");
+//echo date("h:i:s");
+    return jdatetma('Y F j');
 }
-add_shortcode( 'datetmadayw', 'date_tma_dayw' );
+function register_shortcodestma(){
 
+add_shortcode( 'datetmadayw', 'date_tma_dayw' );
+//date_tma_daywtitel
+add_shortcode( 'datetmadaywtitel', 'date_tma_daywtitel' );
+
+}
+add_action( 'init', 'register_shortcodestma');
 
 ?>
