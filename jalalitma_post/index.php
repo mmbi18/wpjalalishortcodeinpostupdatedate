@@ -45,11 +45,23 @@ function date_tma_dayw() {
 //echo date("h:i:s");
     return jdatetma('Y F j');
 }
+//l
+function date_tma_daywtitelday() {
+
+    require_once('inc/jdftma.php');
+    date_default_timezone_set("Iran");
+//echo date("h:i:s");
+
+    return  (  get_the_title() .' '. jdatetma('l Y F j') );
+}
 function register_shortcodestma(){
 
 add_shortcode( 'datetmadayw', 'date_tma_dayw' );
 //date_tma_daywtitel
 add_shortcode( 'datetmadaywtitel', 'date_tma_daywtitel' );
+
+
+add_shortcode( 'datetmadaywtitelday', 'date_tma_daywtitelday' );
 
 }
 add_action( 'init', 'register_shortcodestma');
