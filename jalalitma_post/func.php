@@ -4,7 +4,7 @@ function date_tma_daywtitel() {
 }
 
 function date_tma_dayw() {
-    return jdatetma('Y j F');
+    return jdatetma('j F Y');
 }
 //l
 function date_tma_daywtitelday() {

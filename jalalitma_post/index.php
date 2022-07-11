@@ -10,7 +10,7 @@
  * @mmbi18
  * Plugin Name:  post update bot
  * Plugin URI: https://t-ma.ir
- * Description: Prints "1401-04-17" in WordPress in post short code. 
+ * Description: Prints "1401-04-20" in WordPress in post short code [datetmadayw] [datetmamj day=1 d4='-'] [datetmadaywtitelday]
  * Version: 0.0.1 
  * Author: mohammad bagheri
  * Author URI: https://t-ma.ir 
@@ -29,41 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-function date_tma_daywtitel() {
-
-    require_once('inc/jdftma.php');
-    date_default_timezone_set("Iran");
-//echo date("h:i:s");
-
-    return  (  get_the_title() .' '. jdatetma(' Y F j') );
-}
-
-function date_tma_dayw() {
-
-    require_once('inc/jdftma.php');
-    date_default_timezone_set("Iran");
-//echo date("h:i:s");
-    return jdatetma('Y F j');
-}
-//l
-function date_tma_daywtitelday() {
-
-    require_once('inc/jdftma.php');
-    date_default_timezone_set("Iran");
-//echo date("h:i:s");
-
-    return  (  get_the_title() .' '. jdatetma('l Y F j') );
-}
-function register_shortcodestma(){
-
-add_shortcode( 'datetmadayw', 'date_tma_dayw' );
-//date_tma_daywtitel
-add_shortcode( 'datetmadaywtitel', 'date_tma_daywtitel' );
-
-
-add_shortcode( 'datetmadaywtitelday', 'date_tma_daywtitelday' );
-
-}
-add_action( 'init', 'register_shortcodestma');
+    include(plugin_dir_path( __FILE__ ) . '/func.php');
 
 ?>
