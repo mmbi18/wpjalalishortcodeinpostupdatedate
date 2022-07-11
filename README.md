@@ -31,3 +31,8 @@ Add the date and title of the article in the article
 Add a date to the article
 <br>
 Add the date of the day of the week in the article
+<hr>
+v1.2
+<br>
+[datetmamj day=1 d4='-'] // echo exp =۱۴۰۱-۴-۱۷ if day 18-4-1401
+[datetmadayw] // echo exp=  ۱۴۰۱ ۲۰ تیر
