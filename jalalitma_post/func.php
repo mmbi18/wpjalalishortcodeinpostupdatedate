@@ -3,12 +3,17 @@ function date_tma_daywtitel() {
     return  (  get_the_title() .' '. jdatetma(' Y F j') );
 }
 
+
 function date_tma_dayw() {
     return jdatetma('j F Y');
 }
+
+function date_tma_mah() {
+    return jdatetma('F');
+}
 //l
 function date_tma_daywtitelday() {
-    return  (  get_the_title() .' '. jdatetma('Y l j F') );
+    return  (  get_the_title() .' '. jdatetma('l j F Y') );
 }
 function date_tma_mj($atts) {
     // [datetmamj day=1 d4='-']
@@ -38,6 +43,9 @@ function register_shortcodestma(){
     date_default_timezone_set("Iran");
     
 add_shortcode( 'datetmadayw', 'date_tma_dayw' );
+//date_tma_mah
+add_shortcode( 'datetmamah', 'date_tma_mah' );
+
 //date_tma_daywtitel
 add_shortcode( 'datetmadaywtitel', 'date_tma_daywtitel' );
 
